@@ -1,5 +1,5 @@
 App.GifDetailsRoute = Ember.Route.extend({
   model: function(params) {
-    return Ember.Object.create({id: params.id})
+    return this.store.find("gifLink", params.id)
   }
 });

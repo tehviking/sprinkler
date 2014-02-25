@@ -1,5 +1,5 @@
 App.FsDropdownSelectComponent = Ember.Component.extend({
-  template: Ember.TEMPLATES["components/fs-dropdown-select"],
+  layoutName: "components/fs-dropdown-select",
   tagName: "dl",
   classNames: ["fs-dropdown"],
   classNameBindings: ["active"],
@@ -149,9 +149,8 @@ $(document).ready(function(){
   $(".dropdown-component-container").each(function(){
     var component = App.FsDropdownSelectComponent.create({
       records: ["foo", "bar"],
-      buttonText: "blah"
+      buttonText: "Select"
     });
-    console.log(component.get("itemList.firstObject.name"))
     component.replaceIn(this);
   });
 });

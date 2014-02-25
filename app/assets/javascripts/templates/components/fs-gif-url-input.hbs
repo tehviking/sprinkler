@@ -3,6 +3,10 @@
   {{input value=gifUrl name="gif_link[url]"}}
 </div>
 
-<div class="image-preview" style="float:right;">
-  <img {{bind-attr src="gifUrl"}}>
+<div class="image-preview" style="float:right;margin-top:-162px;">
+  {{#if urlIsValid}}
+    <img {{bind-attr src="gifUrl"}} height=500>
+  {{else}}
+    <h1>That URL isn't valid!</h1>
+  {{/if}}
 </div>

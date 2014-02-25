@@ -1,6 +1,6 @@
 class GifLinksController < ApplicationController
   before_action :set_gif_link, only: [:show, :edit, :update, :destroy]
-
+  respond_to :json, :html
   # GET /gif_links
   def index
     @gif_links = GifLink.all
@@ -8,6 +8,7 @@ class GifLinksController < ApplicationController
 
   # GET /gif_links/1
   def show
+    respond_with @gif_link
   end
 
   # GET /gif_links/new
@@ -21,28 +22,24 @@ class GifLinksController < ApplicationController
 
   # POST /gif_links
   def create
-    @gif_link = GifLink.new(gif_link_params)
-
-    if @gif_link.save
-      redirect_to @gif_link, notice: 'Gif link was successfully created.'
-    else
-      render action: 'new'
-    end
+    @gif_link = GifLink.create(gif_link_params)
+    respond_with @gif_link
   end
 
   # PATCH/PUT /gif_links/1
   def update
     if @gif_link.update(gif_link_params)
-      redirect_to @gif_link, notice: 'Gif link was successfully updated.'
-    else
-      render action: 'edit'
+      respond_with @gif_link
     end
   end
 
   # DELETE /gif_links/1
   def destroy
     @gif_link.destroy
-    redirect_to gif_links_url, notice: 'Gif link was successfully destroyed.'
+    respond_to do |format|
+      format.html {redirect_to gif_links_url}
+      format.json {render nothing: true}
+    end
   end
 
   def details
