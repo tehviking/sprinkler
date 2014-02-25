@@ -7,6 +7,5 @@
 //= require_tree ./templates
 //= require_tree ./routes
 //= require ./store
-//= require ./router
 
 App = Ember.Application.create()

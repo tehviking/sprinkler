@@ -21,7 +21,7 @@ gem 'therubyracer', platforms: :ruby
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'ember-rails'
-gem 'ember-source', '1.4.0'
+gem 'ember-source', '1.4'
 gem 'ember-data-source', '1.0.0.beta.7'
 
 # NOPE.
