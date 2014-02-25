@@ -1,0 +1,9 @@
+<div class="field">
+  <label for="gif_link_url">Url</label><br>
+  <input id="gif_link_url" name="gif_link[url]" type="text">
+  {{input value=gifUrl name="gif_link[url]"}}
+</div>
+
+<div class="image-preview" style="float:right;">
+  <img {{bind-attr src="gifUrl"}}>
+</div>

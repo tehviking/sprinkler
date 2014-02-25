@@ -1,0 +1,76 @@
+$primary-blue: #349ce3;
+$light-blue: #d6ebf9;
+
+@mixin no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.fs-dropdown {
+  position: relative;
+  &:focus {
+    outline:none;
+  }
+  .dropdown-toggle {
+    @include no-select;
+    cursor: pointer;
+    line-height: .6em;
+    font-size: 26px;
+  }
+  .dropdown-button {
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    float: left;
+  }
+  .dropdown-button-text {
+    @include no-select;
+    cursor: pointer;
+    font-weight: 500;
+    display: inline-block;
+    padding: 10px 10px 8px 10px;
+    float: left;
+  }
+
+  .dropdown-select {
+    z-index: 2;
+    display: none;
+    list-style: none;
+    position: absolute;
+    background-color: white;
+    top: 26px;
+    left: 0px;
+    padding: 0;
+    max-height: 160px;
+    width: 160px;
+    overflow-y: auto;
+    border-radius: 10px;
+    border-top: 15px solid white;
+    border-bottom: 15px solid white;
+    -webkit-box-shadow: 4px 4px 16px 0px rgba(50, 50, 50, 0.31);
+    -moz-box-shadow:    4px 4px 16px 0px rgba(50, 50, 50, 0.31);
+    box-shadow:         4px 4px 16px 0px rgba(50, 50, 50, 0.31);   
+    li {
+      padding: 3px 20px;
+      cursor: pointer;
+      font-weight: normal;
+      @include no-select;
+      &.highlighted, &:hover {
+        background-color: $light-blue;
+      }
+      &.selected {
+        color: white;
+        background-color: $primary-blue;
+      }
+    }
+  }
+  &.active {
+    .dropdown-select {
+      display: inline-block;
+    }
+  }
+}

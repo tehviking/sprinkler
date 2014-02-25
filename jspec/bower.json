@@ -1,0 +1,15 @@
+{
+  "name": "sprinkler-specs",
+  "version": "0.0.1",
+  "main": [
+    "sprinkler-specs.js"
+  ],
+  "dependencies": {
+    "ember": "1.4.0",
+    "ember-data": "1.0.0-beta.7",
+    "handlebars": "1.1.2",
+    "ember-mocha-adapter": "0.1.2",
+    "chai-jquery": "*",
+    "ic-ajax": "*"
+  }
+}

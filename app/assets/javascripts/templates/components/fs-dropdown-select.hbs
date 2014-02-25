@@ -1,0 +1,15 @@
+<dt class="timesheet-dropdown-select" {{action "toggleDropdown"}}>
+  <span class="dropdown-button-text">{{buttonText}}</span>
+  <span class="dropdown-button"><i class="fa fa-caret-down dropdown-toggle"></i></span>
+</dt>
+<dd>
+  <ul class="dropdown-select">
+    {{#each itemList}}
+      <li {{bind-attr class="selected highlighted"}} {{action "select" this}}>
+        {{name}}
+      </li>
+    {{else}}
+      <li>No items.</li>
+    {{/each}}
+  </ul>
+</dd>

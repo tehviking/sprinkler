@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @gif_link.title %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @gif_link.url %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @gif_link.description %>
+</p>
+
+<%= link_to 'Edit', edit_gif_link_path(@gif_link) %> |
+<%= link_to 'Back', gif_links_path %>
